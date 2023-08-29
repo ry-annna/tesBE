@@ -8,6 +8,10 @@ const beritaRoutes = require("./routes/berita.js");
 
 const app = express();
 
+app.get("/", (req, res) => {
+  res.send("Express on Vercel");
+});
+
 app.use(express.json());
 
 // app.use("/", (req, res) => {
@@ -19,3 +23,5 @@ app.use("/berita", beritaRoutes);
 app.listen(PORT, () => {
   console.log(`server berjalan diport ${PORT}`);
 });
+
+module.exports = app;
