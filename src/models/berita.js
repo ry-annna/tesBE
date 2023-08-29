@@ -2,7 +2,7 @@ const dbPool = require("../config/database.js");
 const fs = require("fs");
 
 const getAllBerita = () => {
-  const SQLQuery = "SELECT * FROM `berita` WHERE id = 14";
+  const SQLQuery = "SELECT * FROM `berita` WHERE id = 15";
 
   return dbPool.execute(SQLQuery);
 };

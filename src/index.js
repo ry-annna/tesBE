@@ -1,7 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3000;
 
 const usersRoutes = require("./routes/akun-demo.js");
 const beritaRoutes = require("./routes/berita.js");
