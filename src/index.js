@@ -10,9 +10,9 @@ const app = express();
 
 app.use(express.json());
 
-app.use("/", (req, res) => {
-  res.status(200).send("hello");
-});
+// app.use("/", (req, res) => {
+//   res.status(200).send("hello");
+// });
 app.use("/users", usersRoutes);
 app.use("/berita", beritaRoutes);
 
