@@ -13,6 +13,6 @@ app.use(express.json());
 app.use("/users", usersRoutes);
 app.use("/berita", beritaRoutes);
 
-app.listen(PORT, () => {
+app.listen(4000, () => {
   console.log(`server berjalan diport ${PORT}`);
 });
