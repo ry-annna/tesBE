@@ -13,7 +13,7 @@ const getAllBerita = async (req, res) => {
     // fs.writeFileSync("tes.jpg", imageBuffer);
 
     res.json({
-      message: "GET all users sukses",
+      message: "GET all berita sukses",
       data: {
         title: titleDecode,
         deskripsi: deskripsiDecode,
@@ -23,7 +23,7 @@ const getAllBerita = async (req, res) => {
     });
   } catch (error) {
     res.status(500).json({
-      message: "GET all users gagal",
+      message: "GET all berita gagal",
       serverMessage: error,
     });
   }
