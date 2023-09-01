@@ -2,18 +2,18 @@ const dbPool = require("../config/database.js");
 const fs = require("fs");
 
 const getAllBerita = () => {
-  const SQLQuery = "SELECT * FROM `berita` WHERE id = 15";
+  const SQLQuery = "SELECT * FROM `berita`";
 
   return dbPool.execute(SQLQuery);
 };
 
 const createNewBerita = (body) => {
-  const image = fs.readFileSync(
-    "C:/Users/ryans/OneDrive/Desktop/vplus/src/assets/images/miniaccount.jpg"
-  );
+  // const image = fs.readFileSync(
+  //   "C:/Users/ryans/OneDrive/Desktop/vplus/src/assets/images/miniaccount.jpg"
+  // );
 
-  const tes =
-    "C:/Users/ryans/OneDrive/Desktop/vplus/src/assets/images/miniaccount.jpg";
+  // const tes =
+  //   "C:/Users/ryans/OneDrive/Desktop/vplus/src/assets/images/miniaccount.jpg";
 
   // Convert the image to base64s
   // const base64Image = body.gambar.toString("base64");
