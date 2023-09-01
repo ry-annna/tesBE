@@ -8,16 +8,16 @@ const getAllBerita = () => {
 };
 
 const createNewBerita = (body) => {
-  // const image = fs.readFileSync(
-  //   "C:/Users/ryans/OneDrive/Desktop/vplus/src/assets/images/miniaccount.jpg"
-  // );
+  const image = fs.readFileSync(
+    "C:/Users/ryans/OneDrive/Desktop/vplus/src/assets/images/miniaccount.jpg"
+  );
 
   // const tes =
   //   "C:/Users/ryans/OneDrive/Desktop/vplus/src/assets/images/miniaccount.jpg";
 
   // Convert the image to base64s
   // const base64Image = body.gambar.toString("base64");
-  console.log(body.title);
+  // console.log(body.title);
 
   const base64Image = image.toString("base64");
   const base64Title = btoa(body.title);

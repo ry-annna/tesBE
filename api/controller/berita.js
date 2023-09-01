@@ -5,6 +5,7 @@ const getAllBerita = async (req, res) => {
   try {
     const [data] = await UsersModel.getAllBerita();
     // const imageData = imageDataRaw.gambar;
+    const jsonData = JSON.stringify(data);
 
     const imageBuffer = Buffer.from(data[0].gambar, "base64");
     const titleDecode = atob(data[0].title);
@@ -14,12 +15,15 @@ const getAllBerita = async (req, res) => {
 
     res.json({
       message: "GET all berita sukses",
-      data: {
-        title: titleDecode,
-        deskripsi: deskripsiDecode,
-        sumber: sumberDecode,
-        gambar: imageBuffer,
-      },
+      // data: [
+      //   {
+      //     title: titleDecode,
+      //     deskripsi: deskripsiDecode,
+      //     sumber: sumberDecode,
+      //     gambar: imageBuffer,
+      //   },
+      // ],
+      data: data,
     });
   } catch (error) {
     res.status(500).json({
