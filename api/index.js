@@ -2,8 +2,6 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 
-app.use(cors());
-
 const PORT = process.env.PORT || 4000;
 
 const usersRoutes = require("./routes/akun-demo.js");
@@ -11,6 +9,7 @@ const beritaRoutes = require("./routes/berita.js");
 
 const app = express();
 
+app.use(cors());
 app.get("/", (req, res) => {
   res.send("Express on Vercel");
 });
