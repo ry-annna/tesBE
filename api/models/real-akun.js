@@ -1,4 +1,4 @@
-const dbPoolLocal = require("../config/database.js");
+const dbPool = require("../config/database.js");
 
 const getAllUsers = () => {
   const SQLQuery = "SELECT * FROM `real-akun`";
