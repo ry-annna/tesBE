@@ -1,4 +1,4 @@
-const UsersModel = require("../models/demo-akun.js");
+const UsersModel = require("../models/real-akun.js");
 
 const getAllUsers = async (req, res) => {
   try {

@@ -4,7 +4,8 @@ const cors = require("cors");
 
 const PORT = process.env.PORT || 4000;
 
-const usersRoutes = require("./routes/akun-demo.js");
+const demoUsersRoutes = require("./routes/akun-demo.js");
+const realUsersRoutes = require("./routes/akun-real.js");
 const beritaRoutes = require("./routes/berita.js");
 
 const app = express();
@@ -19,7 +20,8 @@ app.use(express.json());
 // app.use("/", (req, res) => {
 //   res.status(200).send("hello");
 // });
-app.use("/users", usersRoutes);
+app.use("/demo-users", demoUsersRoutes);
+app.use("/real-users", realUsersRoutes);
 app.use("/berita", beritaRoutes);
 
 app.listen(PORT, () => {

@@ -1,6 +1,6 @@
 const express = require("express");
 
-const userController = require("../controller/akun-demo.js");
+const userController = require("../controller/akun-real.js");
 
 const router = express.Router();
 

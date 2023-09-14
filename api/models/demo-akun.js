@@ -13,17 +13,4 @@ const createNewUser = (body) => {
   return dbPool.execute(SQLQuery);
 };
 
-const updateUser = (body, id) => {
-  // const table = `demo-akun`;
-  const SQLQuery = `UPDATE \`demo-akun\` SET nama = '${body.nama}', email = '${body.email}', telp = '${body.telp}' WHERE id = ${id}`;
-
-  return dbPool.execute(SQLQuery);
-};
-
-const deleteUser = (id) => {
-  const SQLQuery = `DELETE FROM \`demo-akun\` WHERE id = ${id}`;
-
-  return dbPool.execute(SQLQuery);
-};
-
-module.exports = { getAllUsers, createNewUser, updateUser, deleteUser };
+module.exports = { getAllUsers, createNewUser };
