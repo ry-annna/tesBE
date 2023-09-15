@@ -11,6 +11,7 @@ const getAllUsers = async (req, res) => {
     });
   } catch (error) {
     res.status(500).json({
+      status: 500,
       message: "GET all users gagal",
       serverMessage: error,
     });
@@ -24,10 +25,10 @@ const createNewUser = async (req, res) => {
     res.status(201).json({
       status: 201,
       message: "CREATE new user sukses",
-      data: req.body,
     });
   } catch (error) {
     res.status(500).json({
+      status: 500,
       message: "CREATE new user gagal",
       serverMessage: error,
     });
