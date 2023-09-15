@@ -5,6 +5,7 @@ const getAllUsers = async (req, res) => {
     const [data] = await UsersModel.getAllUsers();
 
     res.json({
+      status: 200,
       message: "GET all users sukses",
       data: data,
     });
@@ -21,6 +22,7 @@ const createNewUser = async (req, res) => {
   try {
     await UsersModel.createNewUser(body);
     res.status(201).json({
+      status: 201,
       message: "CREATE new user sukses",
       data: req.body,
     });
