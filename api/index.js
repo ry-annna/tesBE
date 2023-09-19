@@ -17,9 +17,6 @@ app.get("/", (req, res) => {
 
 app.use(express.json());
 
-// app.use("/", (req, res) => {
-//   res.status(200).send("hello");
-// });
 app.use("/demo-users", demoUsersRoutes);
 app.use("/real-users", realUsersRoutes);
 app.use("/berita", beritaRoutes);
