@@ -37,7 +37,7 @@ const getAllBerita = async (req, res) => {
 const createNewBerita = async (req, res) => {
   const { body } = req;
   try {
-    await UsersModel.createNewBerita(body);
+    // await UsersModel.createNewBerita(body);
     res.status(201).json({
       status: 201,
       message: "CREATE new berita sukses",
