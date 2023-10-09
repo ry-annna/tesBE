@@ -4,27 +4,14 @@ const fs = require("fs");
 const getAllBerita = async (req, res) => {
   try {
     const [data] = await UsersModel.getAllBerita();
-    // const imageData = imageDataRaw.gambar;
-    const jsonData = JSON.stringify(data);
-
-    const imageBuffer = Buffer.from(data[0].gambar, "base64");
-    const titleDecode = atob(data[0].title);
-    const deskripsiDecode = atob(data[0].deskripsi);
-    const sumberDecode = atob(data[0].sumber);
-    // fs.writeFileSync("tes.jpg", imageBuffer);
 
     res.json({
       status: 200,
       message: "GET all berita sukses",
-      // data: [
-      //   {
-      //     title: titleDecode,
-      //     deskripsi: deskripsiDecode,
-      //     sumber: sumberDecode,
-      //     gambar: imageBuffer,
-      //   },
-      // ],
-      data: data,
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+      },
+      data: [...data],
     });
   } catch (error) {
     res.status(500).json({
@@ -35,13 +22,15 @@ const getAllBerita = async (req, res) => {
 };
 
 const createNewBerita = async (req, res) => {
-  const { body } = req;
+  // const { body } = req;
   try {
-    // await UsersModel.createNewBerita(body);
+    await UsersModel.createNewBerita(req);
     res.status(201).json({
       status: 201,
       message: "CREATE new berita sukses",
-      data: req.body,
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+      },
     });
   } catch (error) {
     res.status(500).json({

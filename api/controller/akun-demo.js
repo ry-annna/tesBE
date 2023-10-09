@@ -7,6 +7,9 @@ const getAllUsers = async (req, res) => {
     res.json({
       status: 200,
       message: "GET all users sukses",
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+      },
       data: data,
     });
   } catch (error) {
@@ -19,12 +22,15 @@ const getAllUsers = async (req, res) => {
 };
 
 const createNewUser = async (req, res) => {
-  const { body } = req;
+  // const { body } = req;
   try {
-    await UsersModel.createNewUser(body);
+    await UsersModel.createNewUser(req.body);
     res.status(201).json({
       status: 201,
       message: "CREATE new user sukses",
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+      },
     });
   } catch (error) {
     res.status(500).json({

@@ -10,6 +10,7 @@ const beritaRoutes = require("./routes/berita.js");
 
 const app = express();
 
+app.use(express.static("public"));
 app.use(cors());
 app.get("/", (req, res) => {
   res.send("Express on Vercel");

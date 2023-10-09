@@ -7,12 +7,4 @@ const dbPool = mysql.createPool({
   database: process.env.DB_NAME,
 });
 
-// const dbPoolLocal = mysql.createPool({
-//   host: "localhost",
-//   user: "root",
-//   password: "",
-//   database: "express",
-// });
-
 module.exports = dbPool.promise();
-// module.exports = dbPoolLocal.promise();
