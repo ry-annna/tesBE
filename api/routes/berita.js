@@ -19,12 +19,12 @@ const upload = multer({
   storage: storage,
 });
 
-app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Methods", "POST, GET");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-  next();
-});
+// app.use((req, res, next) => {
+//   res.setHeader("Access-Control-Allow-Origin", "*");
+//   res.setHeader("Access-Control-Allow-Methods", "POST, GET");
+//   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+//   next();
+// });
 router.post("/", upload.single("gambar"), beritaController.createNewBerita);
 router.get("/", beritaController.getAllBerita);
 router.patch("/:idBerita", beritaController.updateUser);
