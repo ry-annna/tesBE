@@ -23,7 +23,7 @@ const getAllBerita = async (req, res) => {
 
 const createNewBerita = async (req, res) => {
   try {
-    await UsersModel.createNewBerita(req.body);
+    await UsersModel.createNewBerita(req);
     res.status(201).json({
       status: 201,
       message: "CREATE new berita sukses",
