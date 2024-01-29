@@ -22,9 +22,8 @@ const getAllBerita = async (req, res) => {
 };
 
 const createNewBerita = async (req, res) => {
-  // const { body } = req;
   try {
-    await UsersModel.createNewBerita(req);
+    await UsersModel.createNewBerita(req.body);
     res.status(201).json({
       status: 201,
       message: "CREATE new berita sukses",
@@ -40,39 +39,4 @@ const createNewBerita = async (req, res) => {
   }
 };
 
-const updateUser = async (req, res) => {
-  const { idUser } = req.params;
-  const { body } = req;
-  try {
-    await UsersModel.updateUser(body, idUser);
-    res.status(200).json({
-      message: "UPDATE user sukses",
-      data: {
-        id: idUser,
-        ...body,
-      },
-    });
-  } catch (error) {
-    res.json({
-      message: "UPDATE user gagal",
-      serverMessage: error,
-    });
-  }
-};
-
-const deleteUser = async (req, res) => {
-  const { idUser } = req.params;
-  try {
-    await UsersModel.deleteUser(idUser);
-    res.json({
-      message: "DELETE user sukses",
-    });
-  } catch (error) {
-    res.json({
-      message: "DELETE user gagal",
-      serverMessage: error,
-    });
-  }
-};
-
-module.exports = { getAllBerita, createNewBerita, updateUser, deleteUser };
+module.exports = { getAllBerita, createNewBerita };

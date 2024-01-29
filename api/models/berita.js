@@ -8,7 +8,7 @@ const getAllBerita = () => {
 };
 
 const createNewBerita = (req) => {
-  const SQLQuery = `INSERT INTO \`berita\` (gambar, title, deskripsi,sumber) VALUES ('${req.file.filename}', '${req.body.title}', '${req.body.deskripsi}','${req.body.sumber}')`;
+  const SQLQuery = `INSERT INTO \`berita\` (gambar, title, deskripsi,sumber) VALUES ('${req.gambar}', '${req.title}', '${req.deskripsi}','${req.sumber}')`;
 
   return dbPool.execute(SQLQuery);
 };
